@@ -1,0 +1,37 @@
+:root {
+    --bg: #f4f4f9; --calc-bg: #2d2d2d; --display-bg: #1e1e1e;
+    --text: #fff; --btn-bg: #4a4a4a; --btn-hover: #666; --toggle-bg: #555;
+}
+body.light-mode {
+    --bg: #e0e0e0; --calc-bg: #ffffff; --display-bg: #f5f5f5;
+    --text: #333; --btn-bg: #ddd; --btn-hover: #ccc; --toggle-bg: #eee;
+}
+
+body {
+    display: flex; justify-content: center; align-items: center;
+    height: 100vh; margin: 0; background: var(--bg); font-family: system-ui;
+    transition: background 0.3s;
+}
+.calculator {
+    background: var(--calc-bg); padding: 20px; border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); transition: background 0.3s;
+}
+.toggle-btn {
+    width: 100%; padding: 8px; margin-bottom: 10px; font-size: 1.2rem;
+    background: var(--toggle-bg); color: var(--text); border: none; 
+    border-radius: 8px; cursor: pointer; transition: 0.3s;
+}
+#display {
+    width: 100%; padding: 15px; font-size: 1.5rem; text-align: right;
+    box-sizing: border-box; border: none; background: var(--display-bg);
+    color: var(--text); border-radius: 8px; margin-bottom: 15px; transition: 0.3s;
+}
+.keys { display: grid; grid-template-columns: repeat(4, 60px); gap: 10px; }
+button:not(.toggle-btn) {
+    padding: 15px; font-size: 1.2rem; border: none; border-radius: 8px;
+    background: var(--btn-bg); color: var(--text); cursor: pointer; transition: 0.2s;
+}
+button:not(.toggle-btn):hover { background: var(--btn-hover); }
+button[data-key="="] { background: #007bff; color: #fff; }
+button[data-key="="]:hover { background: #0056b3; }
+.span-2 { grid-column: span 2; }
